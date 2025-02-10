@@ -40,4 +40,4 @@ class srtDelayer:
         with open(file_copy_fullpath, "w") as f_out:
             for line in corrected_srt_generator:
                 f_out.write(line)
-            print(f"Subtitles successfully delayed by {self.delay}s after {str(self.timestamp)}. The new copy can be found here: {file_copy_fullpath}")
+            print(f"Subtitles successfully delayed by {str(self.delay)} after {str(self.timestamp)}. The new copy can be found here: {file_copy_fullpath}")
