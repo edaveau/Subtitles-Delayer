@@ -31,3 +31,13 @@ class srtDelayer:
                     ts_line_as_list[index] = strfdelta(ts, ts_format)  # Conversion en string
 
         return " ".join(ts_line_as_list)
+    
+    def write_to_file(self, corrected_srt_generator: str, prefix="copy_"):
+        filepath = self.srt_path.parent
+        file_copy_name = prefix + self.srt_path.name
+        file_copy_fullpath = Path(filepath/file_copy_name).as_posix()
+
+        with open(file_copy_fullpath, "w") as f_out:
+            for line in corrected_srt_generator:
+                f_out.write(line)
+            print(f"Subtitles successfully delayed by {self.delay}s after {str(self.timestamp)}. The new copy can be found here: {file_copy_fullpath}")
