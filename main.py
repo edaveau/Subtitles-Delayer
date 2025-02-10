@@ -1,4 +1,5 @@
 from bin.assert_type import assert_srt, assert_ts
+from bin.srt_delayer import srtDelayer
 import argparse
 
 
@@ -27,4 +28,9 @@ if __name__ == "__main__":
     ts = args.timestamp
     delay = args.delay
 
-    print(file_in, ts, delay)
+    srt_delayer = srtDelayer(path=file_in, timestamp=ts, delay=delay)
+    srt_generator = srt_delayer.open_srt_file()
+    corrected_srt_generator = srt_delayer.delay_after_timestamp(srt_as_generator=srt_generator)
+    for line in corrected_srt_generator:
+        print(line)
+
