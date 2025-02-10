@@ -39,8 +39,10 @@ The following formats for the parameter `timestamp` are accepted by the script:
 
 ## Version History
 
+* 1.0.1
+    * Added README.md
 * 1.0
-    * Fully functional release
+    * Fully functional release (simple CLI use, one file in one file out)
 * 0.1
     * Initial Release (_no write to output_)
 
