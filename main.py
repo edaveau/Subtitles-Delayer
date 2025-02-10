@@ -20,7 +20,7 @@ if __name__ == "__main__":
                         01:02:03,123 - 02:03:04.456 - 3560 - 3m20s""")
     parser.add_argument("--delay", "-d", 
                         required=True, 
-                        type=int,
+                        type=float,
                         help="Delay for your subtitles (in seconds)")
     args = parser.parse_args()
 
